@@ -22,13 +22,13 @@
 
 | Column                     | Type       | Options                        |
 | -------------------------- | ---------- | ------------------------------ |
-| user                       | references | null: false, foreign_key: true |
+| user                       | references | null:false, foreign_key: true |
 | name                       | string     | null:false                     |
 | text                       | text       | null:false                     |
 | category_id                | integer    | null:false                     |
 | product_condition_id       | integer    | null:false                     |
 | shipping_charge_id         | integer    | null:false                     |
-| delivery_source_area_id    | integer    | null:false                     |
+| prefecture_id              | integer    | null:false                     |
 | estimated_shipping_date_id | integer    | null:false                     |
 | price                      | integer    | null:false                     |
 
@@ -41,8 +41,8 @@
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| items  | references | null: false, foreign_key: true |
+| user   | references | null:false, foreign_key: true |
+| items  | references | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -54,7 +54,7 @@
 | Column        | Type    | Options                  |
 | ------------- | ------- | ------------------------ |
 | postal_number | integer | null:false               |
-| prefectures   | string  | null:false               |
+| prefecture_id | integer | null:false               |
 | municipality  | string  | null:false               |
 | address1      | string  | null:false               |
 | address2      | string  | null:false               |
