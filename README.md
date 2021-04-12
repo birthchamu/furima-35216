@@ -42,7 +42,7 @@
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null:false, foreign_key: true |
-| items  | references | null:false, foreign_key: true |
+| item  | references | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -51,14 +51,15 @@
 
 ## shipping_addresses テーブル
 
-| Column        | Type    | Options                  |
-| ------------- | ------- | ------------------------ |
-| postal_number | string  | null:false               |
-| prefecture_id | integer | null:false               |
-| municipality  | string  | null:false               |
-| address1      | string  | null:false               |
-| address2      | string  | null:false               |
-| phone_number  | string  | null:false, unique: true |
+| Column        | Type       | Options                       |
+| ------------- | ---------- | ----------------------------- |
+| postal_number | string     | null:false                    |
+| prefecture_id | integer    | null:false                    |
+| municipality  | string     | null:false                    |
+| address1      | string     | null:false                    |
+| address2      | string     | null:false                    |
+| phone_number  | string     | null:false, unique: true      |
+| item          | references | null:false, foreign_key: true |
 
 ### Association
 
