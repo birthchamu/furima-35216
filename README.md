@@ -46,7 +46,7 @@
 
 ### Association
 - belongs_to :user
-- has_one :item
+- belongs_to :item
 - has_one :address
 
 ## addresses テーブル
@@ -63,7 +63,7 @@
 
 ### Association
 
-- has_one :purchase_record
+- belongs_to :purchase_record
 
 
 
