@@ -51,15 +51,15 @@
 
 ## addresses テーブル
 
-| Column        | Type       | Options                       |
-| ------------- | ---------- | ----------------------------- |
-| postal_number | string     | null:false                    |
-| prefecture_id | integer    | null:false                    |
-| municipality  | string     | null:false                    |
-| address1      | string     | null:false                    |
-| address2      | string     |                               |
-| phone_number  | string     | null:false, unique: true      |
-| item          | references | null:false, foreign_key: true |
+| Column          | Type       | Options                       |
+| --------------- | ---------- | ----------------------------- |
+| postal_number   | string     | null:false                    |
+| prefecture_id   | integer    | null:false                    |
+| municipality    | string     | null:false                    |
+| address1        | string     | null:false                    |
+| address2        | string     |                               |
+| phone_number    | string     | null:false, unique: true      |
+| purchase_record | references | null:false, foreign_key: true |
 
 ### Association
 
