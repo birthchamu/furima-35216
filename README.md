@@ -53,7 +53,7 @@
 
 | Column        | Type    | Options                  |
 | ------------- | ------- | ------------------------ |
-| postal_number | integer | null:false               |
+| postal_number | string  | null:false               |
 | prefecture_id | integer | null:false               |
 | municipality  | string  | null:false               |
 | address1      | string  | null:false               |
