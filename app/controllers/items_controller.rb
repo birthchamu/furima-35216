@@ -43,11 +43,11 @@ class ItemsController < ApplicationController
                                  :estimated_shipping_date_id, :price).merge(user_id: current_user.id)
   end
 
-  def move_to_index
-    redirect_to action: :index unless @item.user.id == current_user.id
-  end
-
   def find_item
     @item = Item.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless @item.user.id == current_user.id
   end
 end
