@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :upadate]
+  bwfore_action :find_item, only: [:show, :edit, :update]
   before_action :move_to_index, only: [:edit, :update]
   def index
   end
@@ -22,7 +23,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
@@ -44,7 +44,10 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    @item = Item.find(params[:id])
     redirect_to action: :index unless @item.user.id == current_user.id
+  end
+
+  def find_item
+    @item = Item.find(params[:id])
   end
 end
