@@ -22,7 +22,7 @@
 
 | Column                     | Type       | Options                        |
 | -------------------------- | ---------- | ------------------------------ |
-| user                       | references | null:false, foreign_key: true |
+| user                       | references | null:false, foreign_key: true  |
 | name                       | string     | null:false                     |
 | text                       | text       | null:false                     |
 | category_id                | integer    | null:false                     |
@@ -39,10 +39,10 @@
 
 ## purchase_records テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
+| Column | Type       | Options                       |
+| ------ | ---------- | ----------------------------- |
 | user   | references | null:false, foreign_key: true |
-| item  | references | null:false, foreign_key: true |
+| item   | references | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
