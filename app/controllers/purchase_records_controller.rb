@@ -1,5 +1,7 @@
 class PurchaseRecordsController < ApplicationController
+  before_action :authenticate_user!
   before_action :item_find
+  before_action :move_to_index
   def index
     @address = Address.new
   end
@@ -25,6 +27,10 @@ class PurchaseRecordsController < ApplicationController
 
   def item_find
     @item = Item.find(params[:item_id])
+  end
+
+  def move_to_index
+    redirect_to root_path if @item.user.id == current_user.id || @item.purchase_record.present?
   end
 
   def pay_item
