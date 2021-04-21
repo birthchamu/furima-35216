@@ -33,6 +33,11 @@ RSpec.describe Address, type: :model do
         expect(@address.errors.full_messages).to include("Prefecture can't be blank")
       end
 
+      it '都道府県の値が１では商品購入できない' do
+        @address.prefecture_id = 1
+        @address.valid?
+        expect(@address.errors.full_messages).to include("Prefecture Select")
+      end
       it '市区町村が空では商品購入できない' do
         @address.municipality = nil
         @address.valid?
